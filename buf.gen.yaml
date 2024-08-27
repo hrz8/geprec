@@ -1,0 +1,17 @@
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/hrz8/geprec/pkg/pb
+plugins:
+  - remote: buf.build/protocolbuffers/go:v1.34.2
+    out: pkg/pb
+    opt:
+      - paths=source_relative
+  - remote: buf.build/grpc/go:v1.5.1
+    out: pkg/pb
+    opt:
+      - paths=source_relative
+inputs:
+  - directory: proto
