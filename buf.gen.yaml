@@ -4,12 +4,19 @@ managed:
   override:
     - file_option: go_package_prefix
       value: github.com/hrz8/geprec/pkg/pb
+  disable:
+    - file_option: go_package_prefix
+      module: buf.build/googleapis/googleapis
 plugins:
   - remote: buf.build/protocolbuffers/go:v1.34.2
     out: pkg/pb
     opt:
       - paths=source_relative
   - remote: buf.build/grpc/go:v1.5.1
+    out: pkg/pb
+    opt:
+      - paths=source_relative
+  - remote: buf.build/grpc-ecosystem/gateway:v2.22.0
     out: pkg/pb
     opt:
       - paths=source_relative

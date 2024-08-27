@@ -3,6 +3,8 @@ version: v2
 modules:
   - name: buf.build/hrz8/geprec
     path: proto
+deps:
+  - buf.build/googleapis/googleapis:8bc2c51e08c447cd8886cdea48a73e14
 lint:
   use:
     - DEFAULT
