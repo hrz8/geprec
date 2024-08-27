@@ -24,3 +24,15 @@ buf generate # add plugin
 ```bash
 buf dep update
 ```
+
+## in action
+
+### http
+```bash
+curl -X POST http://localhost:3008/v1/greeter/hello -d '{"name": "Eji"}'
+```
+
+### grpc
+```bash
+grpcurl -plaintext -d '{"name": "Eji"}' localhost:3009 greeter.v1.GreeterService/SayHello
+```
